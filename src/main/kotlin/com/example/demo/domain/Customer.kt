@@ -7,9 +7,9 @@ import javax.persistence.Id
 
 @Entity
 data class Customer(
-   @Id
-   @GeneratedValue(strategy= GenerationType.AUTO)
-   val id: Long? = null,
-   var name: String,
-   var lastName: String
-) {}
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: Long? = null,
+        var name: String,
+        var lastName: String
+)

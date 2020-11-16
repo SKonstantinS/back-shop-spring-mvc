@@ -1,17 +1,17 @@
 #get count customers
-GET http://localhost:8080/report/getCustomers
+GET http://localhost:8080/report/getCustomersCount
 Accept: application/json
 
 ###
 
 #get count buys
-GET http://localhost:8080/report/getBuys
+GET http://localhost:8080/report/getBuysCount
 Accept: application/json
 
 ###
 
 #get count buys
-GET http://localhost:8080/report/getProducts
+GET http://localhost:8080/report/getProductsCount
 Accept: application/json
 
 ###

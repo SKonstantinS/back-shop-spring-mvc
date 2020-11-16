@@ -2,23 +2,20 @@ package com.example.demo.service
 
 import com.example.demo.domain.Customer
 import com.example.demo.dto.CustomerRequest
-import com.example.demo.repos.CustomerRepository
+import com.example.demo.repository.CustomerRepository
 import org.springframework.stereotype.Service
 
 @Service
 class CustomerService(
         private var customerRepository: CustomerRepository
 ) {
-//    @Autowired
-//    lateinit var customRep: CustomerRepository
-
     fun getAll(): List<Customer> {
         val customers = customerRepository.findAll()
         return customers.toList()
     }
 
     fun getById(id: Long): Customer? {
-        val customer = customerRepository.findById(id.toLong())
+        val customer = customerRepository.findById(id)
         return if (customer.isPresent) customer.get() else null
     }
 

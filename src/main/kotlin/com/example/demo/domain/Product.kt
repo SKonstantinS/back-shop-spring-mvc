@@ -16,12 +16,12 @@ import javax.persistence.Id
  * @param deleteDate дата удаления
  */
 @Entity
-data class Product (
-   @Id
-   @GeneratedValue(strategy= GenerationType.AUTO)
-   val id: Long? = null,
-   var name: String,
-   var price: Float,
-   val createDate: Date,
-   var deleteDate: Date?
-){}
+data class Product(
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: Long? = null,
+        var name: String,
+        var price: Float,
+        val createDate: Date,
+        var deleteDate: Date?
+)

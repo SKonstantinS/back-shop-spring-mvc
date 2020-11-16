@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RestController
 class ReportController(
         private val reportService: ReportService
 ) {
-    @GetMapping("/getCustomers")
+    @GetMapping("/getCustomersCount")
     fun getNumCustomers(): String {
         return reportService.getNumCustomers()
     }
 
-    @GetMapping("/getBuys")
+    @GetMapping("/getBuysCount")
     fun getNumBuys(): String {
         return reportService.getNumBuys()
     }
 
-    @GetMapping("/getProducts")
+    @GetMapping("/getProductsCount")
     fun getNumProducts(): String {
         return reportService.getNumProducts()
     }

@@ -1,14 +1,13 @@
 package com.example.demo.service
 
 import com.example.demo.domain.Buy
-import com.example.demo.repos.BuyRepository
-import org.springframework.data.repository.findByIdOrNull
+import com.example.demo.repository.BuyRepository
 import org.springframework.stereotype.Service
 import java.text.SimpleDateFormat
 import java.util.*
 
 @Service
-class BuyService (
+class BuyService(
         private val buyRepository: BuyRepository
 ) {
     private var counter = 1
@@ -17,7 +16,7 @@ class BuyService (
         return buys.toList()
     }
 
-    fun create(customerId: Long, productId: Long):String{
+    fun create(customerId: Long, productId: Long): String {
         val buyExemplar = Buy(
                 customerId = customerId,
                 productId = productId,
@@ -28,14 +27,14 @@ class BuyService (
         return "Created OK with id: ${result.id}"
     }
 
-    fun getAllBuysByCustomer(customerId: Long):List<Buy>{
+    fun getAllBuysByCustomer(customerId: Long): List<Buy> {
         return buyRepository.findByCustomerId(customerId)
     }
 
-    fun getAllBuysToday():List<Buy> {
+    fun getAllBuysToday(): List<Buy> {
 //        TODO исправить, тк запрос не работает, дата 1 янв 1970
-        var timeBegin = SimpleDateFormat("HH:mm").parse("07:00")
-        var timeFinish = SimpleDateFormat("HH:mm").parse("18:00")
+        val timeBegin = SimpleDateFormat("HH:mm").parse("07:00")
+        val timeFinish = SimpleDateFormat("HH:mm").parse("18:00")
         return buyRepository.findByCreateDateBetween(timeBegin, timeFinish)
     }
 }

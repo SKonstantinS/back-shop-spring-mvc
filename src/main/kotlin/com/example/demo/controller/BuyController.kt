@@ -5,32 +5,32 @@ import com.example.demo.service.BuyService
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping ("/buy")
-class BuyController (
+@RequestMapping("/buy")
+class BuyController(
         private val buyService: BuyService
-){
+) {
     @GetMapping("/getAll")
     fun getAllBuys(): List<Buy> {
         return buyService.getAll()
     }
 
     @PostMapping("/create")
-    fun create(@RequestParam customerId: Long, @RequestParam productId: Long):String {
+    fun create(@RequestParam customerId: Long, @RequestParam productId: Long): String {
         return buyService.create(
-              customerId,
-              productId
+                customerId,
+                productId
         )
     }
 
     @GetMapping("/allBuysByCustomer")
-    fun allBuysByCustomer(@RequestParam customerId: Long): List<Buy>{
+    fun allBuysByCustomer(@RequestParam customerId: Long): List<Buy> {
         return buyService.getAllBuysByCustomer(
-              customerId
+                customerId
         )
     }
 
     @GetMapping("/allBuysToday")
-    fun allBuysToday(): List<Buy>{
+    fun allBuysToday(): List<Buy> {
         return buyService.getAllBuysToday()
     }
 }

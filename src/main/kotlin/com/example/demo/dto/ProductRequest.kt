@@ -1,6 +1,6 @@
 package com.example.demo.dto
 
-data class ProductRequest (
-    val nameProduct: String,
-    val priceProduct: Float) {
-}
+data class ProductRequest(
+        val nameProduct: String,
+        val priceProduct: Float
+)

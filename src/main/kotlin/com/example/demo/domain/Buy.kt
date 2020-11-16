@@ -10,12 +10,12 @@ import javax.persistence.Id
  * Покупка
  */
 @Entity
-data class Buy (
-   @Id
-   @GeneratedValue(strategy= GenerationType.AUTO)
-   val id: Long? = null,
-   val customerId: Long,
-   val productId: Long,
-   val count: Int,
-   val createDate: Date
-){}
+data class Buy(
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: Long? = null,
+        val customerId: Long,
+        val productId: Long,
+        val count: Int,
+        val createDate: Date
+)

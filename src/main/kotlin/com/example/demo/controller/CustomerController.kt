@@ -8,28 +8,15 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@RequestMapping ("/customers")
-class CustomerController (
+@RequestMapping("/customers")
+class CustomerController(
         private val customerService: CustomerService
-){
-//    @Autowired
-//    private lateinit var customerService: customerService //
-
+) {
     @GetMapping("/greeting")
     fun greeting(@RequestParam(name = "name", required = false, defaultValue = "World") name: String, model: Model): String {
         model.addAttribute("name", name)
         return "greeting"
     }
-
-    @GetMapping("/test")
-    fun test() = "taaast"
-
-//    @GetMapping("/getAllWithModel")
-//    fun mainSide(model: Model): String {
-//        val customers = customRep.findAll()
-//        model.addAttribute("customers", customers)
-//        return "customers"
-//    }
 
     @GetMapping("/getAll")
     fun getAllCustomers(): List<Customer> {
@@ -38,7 +25,7 @@ class CustomerController (
 
     @GetMapping("/{id}")
     fun getCustomerById(@PathVariable id: String): Customer? {
-        //TODO chck id вдруг не long
+        //TODO check id вдруг не long
         return customerService.getById(id.toLong())
     }
 
