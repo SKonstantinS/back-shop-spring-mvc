@@ -1,0 +1,28 @@
+#create products
+POST http://localhost:8080/products/create?name=samsung2&price=75.5
+Accept: application/json
+
+###
+
+#get all products
+GET http://localhost:8080/products/getAll
+Accept: application/json
+
+###
+
+#update products id
+POST http://localhost:8080/products/update/11
+Content-Type: application/json
+
+{
+  "nameProduct":"LG-3",
+  "priceProduct":"71.9"
+}
+
+###
+
+#create products
+POST http://localhost:8080/products/delete/10
+Accept: application/json
+
+###

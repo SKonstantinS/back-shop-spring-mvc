@@ -1,0 +1,23 @@
+###
+#get all buys
+GET http://localhost:8080/buy/getAll
+Accept: application/json
+
+###
+
+#create buy
+POST http://localhost:8080/buy/create?customerId=3&productId=6
+Accept: application/json
+###
+
+#get buys  with customerId=n
+GET http://localhost:8080/buy/allBuysByCustomer?customerId=2
+Accept: application/json
+
+###
+
+#get buys today
+GET http://localhost:8080/buy/allBuysToday
+Accept: application/json
+
+###
